@@ -11,7 +11,14 @@ versions for specific projects.
 Now in __init__.py file import flask
 """
 
-from flask import Flask # imoprt flask
+from flask import Flask
 
 # Configure flask
-app = Flask(__name__) # here app is a variable defined as insance of class Flask
+# here app is a variable defined as insance of class Flask.
+# which makes it member of app package
+app = Flask(__name__) 
+
+
+# here 'app' referes to 'app' package defined by 'app' directory and __init__.py script
+# To avoid circular import import routes below app
+from app import routes 
